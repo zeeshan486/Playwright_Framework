@@ -1,13 +1,14 @@
 {
-  "name": "learnplaywright_2026",
+  "name": "saucedemo-e2e-framework",
   "version": "1.0.0",
-  "description": "",
+  "description": "Enterprise-grade Playwright Automation Framework",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "npx playwright test",
+    "test:ci": "npx playwright test --project=\"Chromium Admin\" --project=\"Chromium User\"",
     "test:staging": "cross-env ENV=staging npx playwright test --project=\"Chromium User\"",
     "test:smoke:prod": "cross-env ENV=prod npx playwright test --grep @smoke --project=\"Chromium User\"",
     "test:headed": "npx playwright test --headed",

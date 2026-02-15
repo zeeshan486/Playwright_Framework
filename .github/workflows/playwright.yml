@@ -34,9 +34,9 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      # We pass the environment variable dynamically.
-      # Playwright config will use this to load settings or logical branches.
-      run: npx playwright test --project="Chromium Admin" --project="Chromium User"
+      # Abstracted Execution: We rely on package.json scripts for the actual command.
+      # This allows us to change flags (e.g. adding a new project) without editing YAML.
+      run: npm run test:ci
       env:
         # GENERIC CONFIGURATION (Reusable for any project)
         # 1. Variables: Set 'BASE_URL' in GitHub > Settings > Secrets and variables > Variables
